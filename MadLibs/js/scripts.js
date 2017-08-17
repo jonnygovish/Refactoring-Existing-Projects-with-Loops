@@ -1,5 +1,5 @@
-$(document) . ready(function(){
-  $("#blanks form") . submit(function(){
+$(document).ready(function() {
+  $("#blanks form").submit(function() {
     // var person1Input = $("input#person1").val();
     // var person2Input = $("input#person2").val();
     // var animalInput= $("input#animal").val();
@@ -15,15 +15,18 @@ $(document) . ready(function(){
 
     var blanks = ["person1", "person2", "animal", "exclamation", "verb", "noun"];
 
+    for (var index = 0; index < blanks.length; index += 1) {
+      var userInput = $("#" + blanks[index]).val();
+      $("." + blanks[index]).text(userInput);
+    }
+    // blanks.forEach(function(blank){
+    //   var userInput = $("#" +  blank ). val();
+    //   $("." + blank). text(userInput);
+    // });
 
-    blanks.forEach(function(blank){
-      var userInput = $("#" +  blank ). val();
-      $("." + blank). text(userInput);
-    });
 
 
-
-    $("#story") . show();
+    $("#story").show();
 
     event.preventDefault();
   });
